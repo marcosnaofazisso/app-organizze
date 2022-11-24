@@ -226,9 +226,10 @@ public class PrincipalActivity extends AppCompatActivity {
         if (movimentacao.getTipo().equals("R")) {
             receitaTotal -= movimentacao.getValor();
             usuarioReference.child("receitaTotal").setValue(receitaTotal);
-        } else {
+        }
+        if (movimentacao.getTipo().equals("D")) {
             despesaTotal -= movimentacao.getValor();
-            usuarioReference.child("despesaTotal").setValue(receitaTotal);
+            usuarioReference.child("despesaTotal").setValue(despesaTotal);
         }
     }
 
